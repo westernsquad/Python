@@ -7,6 +7,15 @@ palabras.
  Crear la función inversa, de una cadena en Morse devuelve la traducción."""
 
 #1
+def cuentaGet(c):
+    d = dict()
+    palabras = c.split()
+    for e in c:
+        d[e]=d.get(e,0)+1
+    print(d)
+
+cuentaGet("holala")
+
 def cuentan (c):
    #Reimplementar las funciones que cuentan caracteres y palabras.
     d=dict()
@@ -59,37 +68,56 @@ def inverso2 (dic):
 
     print(d)
 
-inverso1(morse)
+inverso1(agenda)
 inverso2(agenda)
 #3
+agenda = {'Luis': 689332211, 'Maria': 753951456, 'Julio': 147852654}
+def añadir(agenda,n,t):
+    agenda[n]=agenda.get(n, set()) | {t}
 
-def agenda (persona,telefono):
-    '''Recive dos parametro, nombre y un telefono , y se podran anadir a la agenda'''
-    agenda = {'Luis': 689332211, 'Maria': 753951456, 'Julio': 147852654}
-    d=dict()
-    for k in agenda:
-        if persona == k:
-            d[k]=telefono
-        else:
-            d[persona]=telefono
-    agenda.update(d)
-    print(agenda)
+def eliminar (a,n,t):
+    a[n]=a.get(n, set()) - {t}#resta de conjuntos a[n]=a.get(n, set()).remove(t)
 
-agenda('Raul',698352456)
 
+añadir(agenda,'Raul',698352456)
+eliminar(agenda,'Raul',698352456)
 #4
-def morse (cadena):#preguntar por que no me guarda los espacios¿Tendre q meter cada letra una a una sin  usar split?
+def morse1 (cadena):
+    morse = {'A': '.-', 'B': "-...", 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--', 'H': '....', 'I': '..',
+             'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'Ñ': '--.--', 'O': '---', 'p': '.--.',
+             'Q': '--.-',
+             'R': '.-.', 'S': '...', 'T': '-', 'U': '..--', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
+             'Z': '--..',
+             '0': '-----', '1': '.----', '2': '..---', '3': ':...--', '4': '....-', '5': '.....', '6': '-....',
+             '7': '--...', '8': '---..', '9': '----.', '.': '.-.-.-', ',': '-.-.--', '?': '..--..', '"': '.-..-.',
+             '!': '--..--'}
+    traduccido=[]
+    palabras = cadena.split(" ")
+    for e in palabras:
+        traduccido.append(morse.get(e))
+        traduccido.append(" ")
+    cadena1 = ''.join(str(traduccido))
+    print(traduccido)
+    print(str(cadena1))
+print(morse1("HOLA"))
+
+#5
+def morse (cadena):#preguntar por que no me guarda los espacios¿
+    """Funcion que recibe una frase en codigo morse y la traduce"""
 
     traduccido=[]
     morse = {' ':' ','.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E', '..-.': 'F', '--': 'M', '....': 'H', '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L', '-.': 'N', '--.--': 'Ñ', '---': 'O', '.--.': 'p', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T', '..--': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y', '--..': 'Z', '-----': '0', '.----': '1', '..---': '2', ':...--': '3', '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9', '.-.-.-': '.', '-.-.--': ',', '..--..': '?', '.-..-.': '"', '--..--': '!'}
-    #letras = ' '.join(cadena.split())
-    palabras= cadena.split()
+    #letras = ' '.join(cadena.split(""))
+    palabras= cadena.split("/")
     print(palabras)
     for e in palabras:
         letra=e.split()
-        for j in letra :
+        #print(letra)
+        for j in letra:
             traduccido.append(morse.get(j))
-    cadena1= ''.join(traduccido)
-    print(cadena1)
+        traduccido.append(" ")
+    cadena1= ' '.join(traduccido)
     print(traduccido)
-morse('.... --- .-.. .-   -.-. .- .-. .-   -.-. --- .-.. .- ')
+    print(cadena1)
+
+morse('.... --- .-.. .-/-.-. .- .-. .-/-.-. --- .-.. .- ')
