@@ -121,3 +121,4 @@ def morse (cadena):#preguntar por que no me guarda los espacios¿
     print(cadena1)
 
 morse('.... --- .-.. .-/-.-. .- .-. .-/-.-. --- .-.. .- ')
+
