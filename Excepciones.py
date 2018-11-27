@@ -13,3 +13,12 @@ def inputt():
         except ValueError:
             print("Oops! No era válido. Intente nuevamente...")
 inputt()
+
+
+def get (d,k,v):
+    try:
+        return d[k]
+    except KeyError :
+        return v
+
+print (get(({1:"hola"}),1,2))
