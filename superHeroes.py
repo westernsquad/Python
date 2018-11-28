@@ -1,9 +1,10 @@
+import random
 class SuperHeroe():
     '''
     classdocs
     '''
 
-    def __init__(self, nombre, nacionalidad , estatura, peso, apodos= set(), poderes= []):
+    def __init__(self, nombre, nacionalidad , estatura, peso, apodos= [], poderes= []):
         '''
         Constructor
         '''
@@ -116,8 +117,11 @@ class SuperHeroe():
 
 def noticia (superheroe):
     apodos = superheroe.apodos
-    print('Se ha vuelto a ver a '+apodos.pop()+' en Nueva York, '+apodos.pop()+
+    print('Se ha vuelto a ver a '+random.sample(apodos,  1).pop()+' en Nueva York, '+random.sample(apodos,  1)[0]+
           ' ha sido visto en Central Park,'+apodos.pop()+' gritaban los transeúntes.')
+
+a=SuperHeroe("pepe","","","",["Maquina","titan","jefe","jefazo"],[])
+noticia(a)
 
 
 
