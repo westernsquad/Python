@@ -99,3 +99,46 @@ y devuelva el número de días desde el principio del año
 
 f = datetime.date(2018,12,31)
 print(f.strftime("%j"))
+j = f.strftime("%j")
+
+'''– Paradoja del cumpleaños:
+• ¿Cuántas personas tiene que haber en una habitación para que 2
+de ellas cumplan los años el mismo día?
+• Crear una función que devuelva una fecha aleatoria (mes y día)?
+• Crear una función que guarda fechas aleatorias hasta que dos
+coincidan (en mes y día) guardando cuantas ha generado.
+• Crear una función que repite el experimento anterior N veces. De
+media, ¿cuántas personas tiene que haber en la habitación para
+que al menos 2 cumplan años el mismo día?'''
+def fechaR ():
+    inicio = datetime.date(1950, 1, 30)
+    final = datetime.date(2018, 5, 28)
+
+    random_date = inicio + (final - inicio) * random.random()
+    return random_date.strftime('%d-%m')
+    #print(random_date.strftime('%d-%m'))
+
+#fechaR()
+
+def fechasIguales():
+    l=[]
+    while True:
+        f=fechaR()
+        if f not in l:
+            l.append(f)
+        else:
+            #print(f)
+            #print(len(l))
+            break
+    return len(l)
+def numpersonas(n):
+    suma=0
+    media=0
+    for i in range(n):
+        suma=suma+fechasIguales()
+    media = suma/n
+    print(media)
+
+
+fechasIguales()
+numpersonas(7)
