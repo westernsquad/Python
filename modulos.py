@@ -101,6 +101,11 @@ f = datetime.date(2018,12,31)
 print(f.strftime("%j"))
 j = f.strftime("%j")
 
+'''Inversa'''
+
+g=datetime.datetime.strptime("365","%y%j")
+print(g)
+
 '''– Paradoja del cumpleaños:
 • ¿Cuántas personas tiene que haber en una habitación para que 2
 de ellas cumplan los años el mismo día?
@@ -114,31 +119,36 @@ def fechaR ():
     inicio = datetime.date(1950, 1, 30)
     final = datetime.date(2018, 5, 28)
 
-    random_date = inicio + (final - inicio) * random.random()
-    return random_date.strftime('%d-%m')
+    random_date = random.randint(1,365)
+    #print (random_date)
+    return datetime.datetime.strptime(str(random_date),"%j")
     #print(random_date.strftime('%d-%m'))
 
-#fechaR()
-
 def fechasIguales():
-    l=[]
+    '''Una lista para guardar las fechas'''
+    l=set()
     while True:
         f=fechaR()
         if f not in l:
-            l.append(f)
+            l.add(f)
         else:
             #print(f)
             #print(len(l))
             break
-    return len(l)
+    return len(l) + 1,l,f
 def numpersonas(n):
     suma=0
     media=0
+
     for i in range(n):
-        suma=suma+fechasIguales()
+        a , _, _ =fechasIguales() # _ ignora el valor
+        #suma=suma fechasiguales()[0] tambn funciona asi
+        suma=suma+a
     media = suma/n
     print(media)
 
+if __name__ == "__main__":
+    print(fechasIguales())
+    numpersonas(10)
 
-fechasIguales()
-numpersonas(7)
+
