@@ -36,8 +36,8 @@ print(screen)
 clearscreen(screen)
 print (screen)'''
 
-p = Point(3, 4)
-q = Point(7,8)
+p = Point(0, 0)
+q = Point(2,3)
 r = Rectangle(p, q)
 print (p)
 print (p[0])
