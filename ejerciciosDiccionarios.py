@@ -99,7 +99,7 @@ def morse1 (cadena):
     cadena1 = ''.join(str(traduccido))
     print(traduccido)
     print(str(cadena1))
-print(morse1("HOLA"))
+morse1("HOLA")
 
 #5
 def morse (cadena):#preguntar por que no me guarda los espacios¿
@@ -115,10 +115,10 @@ def morse (cadena):#preguntar por que no me guarda los espacios¿
         #print(letra)
         for j in letra:
             traduccido.append(morse.get(j))
-        traduccido.append(" ")
+        traduccido.append("")
     cadena1= ' '.join(traduccido)
     print(traduccido)
     print(cadena1)
 
-morse('.... --- .-.. .-/-.-. .- .-. .-/-.-. --- .-.. .- ')
+#morse('.... --- .-.. .-/-.-. .- .-. .-/-.-. --- .-.. .- ')
 
