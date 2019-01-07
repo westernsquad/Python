@@ -149,6 +149,7 @@ def numpersonas(n):
 
 if __name__ == "__main__":
     print(fechasIguales())
+    fechaR()
     numpersonas(10)
 
 

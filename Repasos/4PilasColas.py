@@ -49,3 +49,4 @@ if __name__ == "__main__" :
 
     cadena = '(si esta balanceada (()))'
     balanceado(cadena)
+    X=False
