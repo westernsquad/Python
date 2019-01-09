@@ -18,6 +18,13 @@
 • []: cualquiera de los caracteres en el set. Los parentesis agrupan pero ojo dentro de los corchetes
 • [^]: cualquiera de los caracteres que no están en el set
 
+
+• Search: busca el primer substring que cumpla el patrón.
+• Findall: devuelve una lista con todos los substring.
+• Sub: sustituye el substring que cumple el patrón por otro substring.
+• Compile: permite preprocesar un patrón.
+match para operaciones
+
 """
 import re
 
@@ -58,12 +65,13 @@ if __name__ == "__main__" :
     print(r2)
 
     r3 = re.match("a.*c", "abcabc") #Si quiero que se pare en la primera C , con modo voraz ?
-    r4 = re.match("a.*?c", "abcabc")
+    r4 = re.match("a.*?e", "abcceabcd")#desde la a hasta la e saldran todos los caracteres que hay entre medias
     print(r4)
 
     # ¿Qué patrón evalúa una ‘a’ seguida de 3 o más ‘b’?
 
-    r5 = re.match("abbb+" , "abbb") # Usar el $ para el final ò "ab{3}b*$"
+    r5 = re.match("abbb+" , "abbbaabbb") # Usar el $ para el final ò "ab{3}b*$"
+    print(r5)
 
     # ¿Qué patrón evalúa la primera palabra de una cadena?
 
@@ -105,7 +113,8 @@ if __name__ == "__main__" :
 
     #– Crear una función que devuelva si una subcadena esta contenida en un string.
 
-    #r11 = re.search("[que]" , "Holaquetal") #instr
+    r11 = re.search("[que]+" , "Holaquetal") #instr
+    print(r11)
 
     # Crear una función que recibe una cadena y la devuelve eliminando los espacios duplicados.
 

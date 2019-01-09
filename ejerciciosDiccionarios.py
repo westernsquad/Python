@@ -1,3 +1,21 @@
+
+'''OrederedDict: diccionarios que conservan el orden de inserción.
+• Counter: diccionario para llevar la cuenta de objetos hasheables
+
+my_dict = {'key1':123,'key2':[12,23,33],'key3':['item0','item1','item2']}
+my_dict['key3'][0]
+Out[5]:
+'item0'
+
+my_dict['key3'][0].upper()
+Out[6]:
+'ITEM0'
+d.keys()
+d.values()
+
+dict_items
+'''
+
 """"Pagina 50 de las diapositivas
 Reimplementar las funciones que cuentan caracteres y
 palabras.

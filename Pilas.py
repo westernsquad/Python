@@ -1,3 +1,25 @@
+''' d =deque('ghi') ->deque tiene 3 elementos
+append(x)
+Add x to the right side of the deque.
+
+appendleft(x)popleft()
+Add x to the left side of the deque.
+
+clear()
+Remove all elements from the deque leaving it with length 0.
+
+copy()
+Create a shallow copy of the deque.
+
+count(x)
+Count the number of deque elements equal to x.
+
+index(x[, start[, stop]])
+Return the position of x in the deque (at or after index start and before index stop). Returns the first match or raises ValueError if not found.
+
+'''
+
+
 def apilar(pila,elemento):
     pila.append(elemento)
 

@@ -57,17 +57,35 @@ def digitos(n):
   while n:
     l.insert(0,n%10)
     n//=10
-  print(l)
+  return l
   
 def digitos2(n):
   l=[]
   for e in str(n):
     l.append(int(e))
-  print(l)
+  return l
 
 print(digitos(123456))
 print(digitos2(654321))
 #– Un número es cubifinito si al elevar al cubo sus dígitos y sumarlos da como resultado 1 u otro número cubifinito. Crear una función que reciba un número y devuelva si es cubifinito.
+
+def cubifinitos(n):
+  l = digitos(n)
+  s = 0
+  for e in l:
+    s += e ** 3
+  #print(s)
+  if s == 1:
+    return print('es cubifinito')
+  elif s>10:
+    return cubifinitos(s)
+  else:
+    return print('no lo es')
+
+
+cubifinitos(101)
+cubifinitos(1243)
+cubifinitos(1234)
 #– Implementar las funciones sobre conjunto, unión, intersección, diferencia y copia.
 def union (s1,s2):
   s=set()
